@@ -12,3 +12,12 @@ gulp.task('webserver', function() {
       open: true
     }));
 });
+
+gulp.task('watch', function () {
+    gulp.watch(['./app/*.html'], ['reload']);
+    gulp.watch(['./app/*.js'], ['reload']);
+});
+
+gulp.task('reload', function () {
+    webserver.reload();
+});
