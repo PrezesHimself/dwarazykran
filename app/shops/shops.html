@@ -1,1 +1,5 @@
-shops
+Seach input is {{vm.searchInput}}
+
+<div ng-repeat="shop in vm.shops | filter:vm.searchInput">
+    <pre>{{shop || json}}</pre>
+</div>
