@@ -8,6 +8,7 @@
     display: block;
     text-align: center;
     padding: 20px;
+    z-index: 1;
 }
 
 .header img{
@@ -21,6 +22,7 @@
     height: 100px;
     padding: 40px;
     text-align: center;
+    z-index: 1;
 }
 
 .searchbar input {
@@ -65,4 +67,55 @@
 .shopslist__heading {
     font-size: 18px;
     font-weight: bold;
+}
+
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+    transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    opacity:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+}
+
+
+.slide {
+    position: absolute;
+    transform: translate(0px, 0px);
+    width: 100vw;
+}
+.slide.ng-enter {
+    -webkit-transition:0.5s  ease-in-out all;
+    -moz-transition:0.5s  ease-in-out all;
+    -o-transition:0.5s  ease-in-out all;
+    transition:0.5s ease-in-out all;
+    transform: translate(0,-80px);
+    opacity:0;
+}
+
+.slide.ng-leave,
+.slide.ng-enter.ng-enter-active {
+    transform: translate(0px,0px);
+    opacity: 1;
+}
+
+/*.slide.ng-leave.ng-leave-active {*/
+    /*transform: translate(0,-50px);*/
+    /*opacity:0;*/
+/*}*/
+
+.map {
+    background: url(http://www.28thart.com/Art_Works/Particles_Orange.jpg);
+    width: 100vw;
+    height:300px;
 }

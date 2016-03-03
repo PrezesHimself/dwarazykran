@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <title>Dwa krazy ran</title>
     <base href="/">
-      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="app/css/main.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   </head>
@@ -11,21 +11,22 @@
 
       <header></header>
       <searchbar></searchbar>
-      <div ui-view=""></div>
+      <div ui-view="" class="slide"></div>
 
 
-      <script src="angular/angular.js"></script>
-      <script src="angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="app.js"></script>
-      <script src="home/home.controller.js"></script>
-      <script src="home/home.js"></script>
-      <script src="map/map.controller.js"></script>
-      <script src="map/map.js"></script>
-      <script src="shops/shops.controller.js"></script>
-      <script src="shops/shops.js"></script>
-      <script src="header/header.directive.js"></script>
-      <script src="searchbar/searchbar.controller.js"></script>
-      <script src="searchbar/searchbar.directive.js"></script>
-      <script src="mainnav/mainnav.directive.js"></script>
+      <script src="../node_modules/angular/angular.js"></script>
+      <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+      <script src="app/app.js"></script>
+      <script src="app/home/home.controller.js"></script>
+      <script src="app/home/home.js"></script>
+      <script src="app/map/map.controller.js"></script>
+      <script src="app/map/map.js"></script>
+      <script src="app/shops/shops.controller.js    "></script>
+      <script src="app/shops/shops.js"></script>
+      <script src="../components/header/header.directive.js"></script>
+      <script src="../components/searchbar/searchbar.controller.js"></script>
+      <script src="../components/searchbar/searchbar.directive.js"></script>
+      <script src="../components/mainnav/mainnav.directive.js"></script>
   </body>
 </html>

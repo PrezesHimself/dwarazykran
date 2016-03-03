@@ -1,16 +1,23 @@
 var gulp = require('gulp');
-var webserver = require('gulp-webserver');
+var browserSync = require('browser-sync');
+var modRewrite  = require('connect-modrewrite');
 
-gulp.task('default', ['webserver'], function() {
+gulp.task('default', ['browser-sync'], function() {
 
 })
 
-gulp.task('webserver', function() {
-  gulp.src(['app', 'node_modules', 'components'])
-    .pipe(webserver({
-      livereload: true,
-      open: true
-    }));
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "./",
+            middleware: [
+                modRewrite([
+                    '!\\.\\w+$ /app/index.html [L]'
+                ])
+            ]
+        }
+    });
 });
 
 gulp.task('watch', function () {

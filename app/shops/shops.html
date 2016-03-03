@@ -1,14 +1,14 @@
 <h2>Seach input is {{vm.searchInput}}</h2>
 
 <div class="container-fluid">
-    <div class="row">
-        <div ng-repeat="shop in vm.shops | filter:vm.searchInput" class="col-sm-2 col-md-2 shopslist__item">
+    <div class="row example-animate-container">
+        <div ng-repeat="shop in vm.shops | filter:vm.searchInput" class="col-sm-2 col-md-2 shopslist__item animate-repeat">
                     <div class="thumbnail">
                         <img ng-src="{{shop.logo_url}}" alt="">
                         <div class="caption">
                             <h3>{{shop.name}}</h3>
                             <p>{{shop.description}}</p>
-                            <p><a href="#/map" class="btn btn-primary" role="button">poka trase</a> <a href="#/map" class="btn btn-default" role="button">idź pan</a></p>
+                            <p><a href="map" class="btn btn-primary" role="button">poka trase</a> <a href="map" class="btn btn-default" role="button">idź pan</a></p>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ angular.module('webApp')
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'home/home.html',
+                templateUrl: 'app/home/home.html',
                 controller: 'HomeController',
                 controllerAs: 'vm'
             });
