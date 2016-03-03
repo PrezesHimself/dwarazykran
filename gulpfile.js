@@ -6,7 +6,7 @@ gulp.task('default', ['webserver'], function() {
 })
 
 gulp.task('webserver', function() {
-  gulp.src(['app', 'node_modules'])
+  gulp.src(['app', 'node_modules', 'components'])
     .pipe(webserver({
       livereload: true,
       open: true

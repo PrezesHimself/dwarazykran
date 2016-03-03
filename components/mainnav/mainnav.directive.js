@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('webApp')
-    .directive('header', function() {
+    .directive('mainnav', function() {
         return {
-            templateUrl: 'components/header/header.html',
+            templateUrl: 'mainnav/mainnav.html',
             restrict: 'E',
             link: function(scope, element) {
-                element.addClass('header');
+                element.addClass('mainnav');
             }
         };
     });
