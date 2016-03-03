@@ -4,7 +4,8 @@
   "description": "DziadekStatyKomuch & KlasycznyKuba",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reinstall": "rm -rf node_modules && npm install"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/PrezesHimself/dwarazykran#readme",
   "devDependencies": {
+    "angular": "^1.5.0",
     "gulp": "^3.9.1",
     "gulp-webserver": "^0.9.1"
   }
