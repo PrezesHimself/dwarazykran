@@ -1,0 +1,23 @@
+{
+  "name": "dwarazykran",
+  "version": "1.0.0",
+  "description": "DziadekStatyKomuch & KlasycznyKuba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrezesHimself/dwarazykran.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrezesHimself/dwarazykran/issues"
+  },
+  "homepage": "https://github.com/PrezesHimself/dwarazykran#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}
