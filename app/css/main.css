@@ -50,6 +50,18 @@
     text-align: center;
 
 }
+.shopslist__item img {
+
+    height: 90px;
+    max-height: 90px;
+    width: auto;
+
+}
+.shopslist__item p{
+    height: 100px;
+    overflow: hidden;
+
+}
 .shopslist__heading {
     font-size: 18px;
     font-weight: bold;
