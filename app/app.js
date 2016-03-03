@@ -1,10 +1,13 @@
 'use strict';
-angular.module('webApp', [
+    angular.module('webApp', [
+        'ui.router'
+    ])
+    .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
+      $urlRouterProvider
+          .otherwise('/');
 
-])
-.config(function() {
-  // app config
-})
-.run(function() {
-  console.log('running angular ' + angular.version.full);
-})
+      //$locationProvider.html5Mode(true);
+    }])
+    .run(function() {
+       console.log('running angular ' + angular.version.full);
+    })

@@ -6,9 +6,9 @@ gulp.task('default', ['webserver'], function() {
 })
 
 gulp.task('webserver', function() {
-  gulp.src('.')
+  gulp.src(['app', 'node_modules'])
     .pipe(webserver({
       livereload: true,
-      open: 'http://localhost:8000/app/index.html'
+      open: true
     }));
 });
