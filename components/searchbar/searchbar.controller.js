@@ -7,13 +7,13 @@
 
         this.update = function() {
 
-            $rootScope.$broadcast('userInput', this.input);
-
             if(this.input) {
                 $location.path( "/shops" );
             } else {
                 $location.path( "/" );
             }
+            
+            $rootScope.$broadcast('userInput', this.input);
         }
     }
 

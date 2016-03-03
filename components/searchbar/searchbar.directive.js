@@ -5,9 +5,6 @@ angular.module('webApp')
         return {
             templateUrl: 'searchbar/searchbar.html',
             restrict: 'E',
-            scope: {
-                onUserInput: '&'
-            },
             controller: 'SearchbarController',
             controllerAs: 'vm',
             link: function(scope, element) {
