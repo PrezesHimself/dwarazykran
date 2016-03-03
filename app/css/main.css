@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.header {
+    height: 100px;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+.header img{
+
+}
+
+.searchbar {
+    background: #000;
+    color: #FFF;
+    display: block;
+    height: 100px;
+    padding: 40px;
+    text-align: center;
+}
+
+.searchbar input {
+    width: 80%;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #FFF;
+    color: #FFF;
+}
+
+.mainnav {
+    display: block;
+    padding: 40px;
+    text-align: center;
+}
+.mainnav a {
+    display: inline-block;
+
+}
+.mainnav a img {
+    display: block;
+
+}
