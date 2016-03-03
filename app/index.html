@@ -5,7 +5,12 @@
     <base href="/">
   </head>
   <body ng-app="webApp">
+
+      <header></header>
+      <searchbar></searchbar>
       <div ui-view=""></div>
+
+
       <script src="angular/angular.js"></script>
       <script src="angular-ui-router/release/angular-ui-router.js"></script>
       <script src="app.js"></script>
@@ -13,5 +18,10 @@
       <script src="home/home.js"></script>
       <script src="map/map.controller.js"></script>
       <script src="map/map.js"></script>
+      <script src="shops/shops.controller.js"></script>
+      <script src="shops/shops.js"></script>
+      <script src="components/header/header.directive.js"></script>
+      <script src="components/searchbar/searchbar.directive.js"></script>
+      <script src="components/mainnav/mainnav.directive.js"></script>
   </body>
 </html>
