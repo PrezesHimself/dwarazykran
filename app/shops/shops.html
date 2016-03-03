@@ -1,5 +1,6 @@
-Seach input is {{vm.searchInput}}
+<h2>Seach input is {{vm.searchInput}}</h2>
 
-<div ng-repeat="shop in vm.shops | filter:vm.searchInput">
-    <pre>{{shop || json}}</pre>
+<div ng-repeat="shop in vm.shops | filter:vm.searchInput" class="shopslist__item">
+    <h4 class="shopslist__heading">{{shop.name}}</h4>
+    <img ng-src="{{shop.logo_url}}" alt="">
 </div>

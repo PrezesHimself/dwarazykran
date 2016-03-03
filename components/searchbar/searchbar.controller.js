@@ -10,9 +10,9 @@
             if(this.input) {
                 $location.path( "/shops" );
             } else {
-                $location.path( "/" );
+                //$location.path( "/" );
             }
-            
+
             $rootScope.$broadcast('userInput', this.input);
         }
     }

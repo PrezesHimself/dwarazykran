@@ -44,3 +44,13 @@
     display: block;
 
 }
+
+.shopslist__item {
+    display: inline-block;
+    text-align: center;
+
+}
+.shopslist__heading {
+    font-size: 18px;
+    font-weight: bold;
+}
