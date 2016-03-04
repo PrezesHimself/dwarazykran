@@ -2,13 +2,13 @@
 
 (function() {
 
-    function SearchbarController($location, $rootScope) {
+    function SearchbarController($rootScope, $state) {
         this.input = '';
-
+        console.log($state);
         this.update = function() {
 
             if(this.input) {
-                $location.path( "/shops" );
+                $state.go('app.shops')
             } else {
                 //$location.path( "/" );
             }
@@ -17,7 +17,7 @@
         }
     }
 
-    SearchbarController.$inject = ['$location', '$rootScope'];
+    SearchbarController.$inject = ['$rootScope', '$state'];
 
     angular.module('webApp')
         .controller('SearchbarController', SearchbarController);
