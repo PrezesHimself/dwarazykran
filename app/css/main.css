@@ -50,8 +50,16 @@
 .shopslist__item {
     display: inline-block;
     text-align: center;
+    max-height: 420px;
+    height:420px;
+    overflow-y: hidden;
 
 }
+
+.thumbnail {
+    height: 400px;
+}
+
 .shopslist__item img {
 
     height: 90px;
@@ -60,7 +68,8 @@
 
 }
 .shopslist__item p{
-    height: 100px;
+    height: 80px;
+    max-height: 80px;
     overflow: hidden;
 
 }
