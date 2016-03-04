@@ -5,7 +5,7 @@
         'ngSanitize',
         'pascalprecht.translate'
     ])
-    .config(['$urlRouterProvider', '$locationProvider', '$translateProvider' ,'$stateProvider', function($urlRouterProvider, $locationProvider, $translateProvider, $stateProvider) {
+    .config(['$urlRouterProvider', '$locationProvider', '$translateProvider' ,'$stateProvider', '$httpProvider', function($urlRouterProvider, $locationProvider, $translateProvider, $stateProvider, $httpProvider) {
         $urlRouterProvider
           .otherwise('/en/');
 
@@ -35,6 +35,8 @@
         ;
         // Enable escaping of HTML
         $translateProvider.useSanitizeValueStrategy('sanitize');
+
+        $httpProvider.defaults.cache = true;
     }])
     .run(function($rootScope, $stateParams, $location, $translate) {
 
