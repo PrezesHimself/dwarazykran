@@ -8,7 +8,10 @@
                         <div class="caption">
                             <h3>{{shop.name}}</h3>
                             <p>{{shop.description}}</p>
-                            <p><a href="map" class="btn btn-primary" role="button">poka trase</a> <a href="map" class="btn btn-default" role="button">idź pan</a></p>
+                            <p>
+                                <a ui-sref='map({shopName: shop.name})' class="btn btn-primary" role="button">poka trase</a>
+                                <a ui-sref='map({shopName: shop.name})' class="btn btn-default" role="button">idź pan</a>
+                            </p>
                         </div>
                     </div>
                 </div>

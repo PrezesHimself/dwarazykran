@@ -3,6 +3,15 @@
     font-family: Arial;
 }
 
+body, html {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+[ui-view] {
+    overflow-y: auto;
+    height: calc(100vh - 200px);
+}
 .header {
     height: 100px;
     display: block;
@@ -103,20 +112,20 @@
     transform: translate(0px, 0px);
     width: 100vw;
 }
-.slide.ng-enter {
-    -webkit-transition:0.5s  ease-in-out all;
-    -moz-transition:0.5s  ease-in-out all;
-    -o-transition:0.5s  ease-in-out all;
-    transition:0.5s ease-in-out all;
-    transform: translate(0,-80px);
-    opacity:0;
-}
+/*.slide.ng-enter {*/
+    /*-webkit-transition:0.5s  ease-in-out all;*/
+    /*-moz-transition:0.5s  ease-in-out all;*/
+    /*-o-transition:0.5s  ease-in-out all;*/
+    /*transition:0.5s ease-in-out all;*/
+    /*transform: translate(0,-80px);*/
+    /*opacity:0;*/
+/*}*/
 
-.slide.ng-leave,
-.slide.ng-enter.ng-enter-active {
-    transform: translate(0px,0px);
-    opacity: 1;
-}
+/*.slide.ng-leave,*/
+/*.slide.ng-enter.ng-enter-active {*/
+    /*transform: translate(0px,0px);*/
+    /*opacity: 1;*/
+/*}*/
 
 /*.slide.ng-leave.ng-leave-active {*/
     /*transform: translate(0,-50px);*/
@@ -127,4 +136,12 @@
     background: url(http://www.28thart.com/Art_Works/Particles_Orange.jpg);
     width: 100vw;
     height:300px;
+}
+
+.sidebar {
+    position: absolute;
+    height: calc(100vh - 200px);
+    width: 350px;
+    background: #000;
+    top: 0px;
 }
