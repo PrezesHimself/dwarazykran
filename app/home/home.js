@@ -3,7 +3,7 @@
 angular.module('webApp')
     .config(function($stateProvider) {
         $stateProvider
-            .state('home', {
+            .state('app.home', {
                 url: '/',
                 templateUrl: 'app/home/home.html',
                 controller: 'HomeController',

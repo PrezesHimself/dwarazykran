@@ -3,7 +3,6 @@
 (function() {
 
     function SidebarController($scope) {
-        this.input = '';
         this.currentShop = $scope.currentShop;
     }
 

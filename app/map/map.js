@@ -3,7 +3,7 @@
 angular.module('webApp')
     .config(function($stateProvider) {
         $stateProvider
-            .state('map', {
+            .state('app.map', {
                 url: '/map?shopName',
                 templateUrl: 'app/map/map.html',
                 controller: 'MapController',
