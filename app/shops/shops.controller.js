@@ -4,11 +4,18 @@
 
     function ShopsController($scope, ShopsService) {
 
-        this.name = 'ShopsController';
-
-        this.shops = ShopsService.getShops();
-
         var _self = this;
+
+        this.name = 'ShopsController';
+        this.loading = true;
+
+        ShopsService.getShops().then(function(data) {
+            _self.shops = data;
+            _self.loading = false;
+        });
+
+        console.log(this.shops)
+
 
 
 

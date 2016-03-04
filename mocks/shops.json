@@ -1,0 +1,48 @@
+[{
+  "id": 43,
+  "name": "5aSEC",
+  "point": {
+    "pk": 118,
+    "x": 723,
+    "y": 213,
+    "level_id": 0,
+    "type": 6,
+    "edges_a": [
+      {
+        "pk": 213,
+        "point_a": 118,
+        "point_b": 21,
+        "b_to_a_relation": 0,
+        "length": 1,
+        "direction": 0
+      }
+    ],
+    "is_heavy_weight": false
+  },
+  "locale_id": "43",
+  "email": "",
+  "www": "",
+  "phone": "",
+  "logo_url": "http://pasazlodz.techcave.pl/media/shop/pasaz_lodz_logo_5a-sec.jpg",
+  "front_url": "http://pasazlodz.techcave.pl/media/shop/pl_front_5a-sec.jpg",
+  "tags": [],
+  "has_icon": false,
+  "main_category": 19,
+  "categories": [
+    19
+  ],
+  "contest_set": [],
+  "description": "Ekologiczna pralnia chemiczna. Dzięki zastosowaniu nowoczesnych technologii światowych można wyczyścić każdy rodzaj odzieży w zaledwie 90 minut. Doskonała jakość usług.",
+  "archived": false,
+  "created_at": "2016-02-10T12:13:17.751606",
+  "updated_at": "2016-02-18T10:08:16.341921",
+  "external_id": null,
+  "level": "0",
+  "local_nr": "",
+  "lottery": false,
+  "has_verifier": false,
+  "floor": 0,
+  "opening_hours": null,
+  "link_set": [],
+  "video_set": []
+}]
