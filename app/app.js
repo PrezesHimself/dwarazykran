@@ -7,7 +7,7 @@
     ])
     .config(['$urlRouterProvider', '$locationProvider', '$translateProvider' ,'$stateProvider', function($urlRouterProvider, $locationProvider, $translateProvider, $stateProvider) {
         $urlRouterProvider
-          .otherwise('/');
+          .otherwise('/en/');
 
         $stateProvider.state('app', {
             abstract: true,
@@ -32,13 +32,14 @@
 
         $translateProvider.translations('en', en);
         $translateProvider.translations('pl', pl);
-        $translateProvider.preferredLanguage('en');
+        ;
         // Enable escaping of HTML
         $translateProvider.useSanitizeValueStrategy('sanitize');
     }])
     .run(function($rootScope, $stateParams, $location, $translate) {
 
         $rootScope.currentState = 'app.home';
+        $translate.use('en');
 
         $rootScope.$on('$stateChangeSuccess', function rootStateChangeSuccess(event, toState, fromState){
             if($stateParams.lang !== undefined){
