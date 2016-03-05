@@ -10,10 +10,6 @@
 
         this.showShopComponent = function() {
             var shop = {
-                name: '',
-                description: 'Worem gipsu dolor costam costam jakis opis kurde przeciez bla bnla',
-                category: 'kategoria',
-                id: ''
             }
 
             shop.name = $stateParams.shopName;
