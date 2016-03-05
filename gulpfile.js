@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var modRewrite  = require('connect-modrewrite');
+var shell = require('gulp-shell')
 
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('default', ['browser-sync', 'cors'], function() {
 
 })
 
@@ -25,6 +26,10 @@ gulp.task('watch', function () {
     gulp.watch(['./app/*.css'], ['reload']);
     gulp.watch(['./app/*.js'], ['reload']);
 });
+
+gulp.task('cors', shell.task([
+    'corsproxy'
+]))
 
 gulp.task('reload', function () {
     webserver.reload();

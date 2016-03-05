@@ -37,6 +37,7 @@
         $translateProvider.useSanitizeValueStrategy('sanitize');
 
         $httpProvider.defaults.cache = true;
+        $httpProvider.defaults.withCredentials = true;
     }])
     .run(function($rootScope, $stateParams, $location, $translate) {
 

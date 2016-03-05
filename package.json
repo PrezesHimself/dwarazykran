@@ -25,6 +25,8 @@
     "angular-ui-router": "^0.2.18",
     "browser-sync": "^2.11.1",
     "connect-modrewrite": "^0.8.5",
-    "gulp": "^3.9.1"
+    "corsproxy": "^1.4.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2"
   }
 }
