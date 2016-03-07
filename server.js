@@ -9,4 +9,4 @@ var app = express();
 app.listen(process.env.PORT || 3002);
 
 console.log(__dirname, __dirname + '/.tmp', 'tu', path.join(__dirname, 'public/stylesheets'));
-app.use(express.static(path.join(__dirname, '.tmp')));
+app.use(express.static(path.join(__dirname, '../.tmp')));
