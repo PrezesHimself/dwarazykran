@@ -8,4 +8,4 @@ var app = express();
 app.listen(process.env.PORT || 3002);
 
 console.log(__dirname);
-app.use(express.static(__dirname + '/../.tmp'));
+app.use(express.static(__dirname + '/.tmp'));
