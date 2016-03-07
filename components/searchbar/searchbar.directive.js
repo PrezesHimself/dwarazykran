@@ -3,7 +3,7 @@
 angular.module('webApp')
     .directive('searchbar', function() {
         return {
-            templateUrl: '../components/searchbar/searchbar.html',
+            templateUrl: 'searchbar.tpl.html',
             restrict: 'E',
             controller: 'SearchbarController',
             controllerAs: 'vm',

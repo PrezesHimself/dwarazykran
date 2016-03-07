@@ -3,7 +3,7 @@
 angular.module('webApp')
     .directive('header', function() {
         return {
-            templateUrl: '../components/header/header.html',
+            templateUrl: 'header.tpl.html',
             restrict: 'E',
             controller: 'HeaderController',
             controllerAs: 'vm',

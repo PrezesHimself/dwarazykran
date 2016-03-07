@@ -15,7 +15,7 @@
             template: '<ui-view/>'
         });
 
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
 
 
         var en = {
@@ -53,6 +53,7 @@
             }
         });
        console.log('running angular ' + angular.version.full );
+
 
     })
 

@@ -3,7 +3,7 @@
 angular.module('webApp')
     .directive('sidebar', function() {
         return {
-            templateUrl: '../components/sidebar/sidebar.html',
+            templateUrl: 'sidebar.tpl.html',
             restrict: 'E',
             controller: 'SidebarController',
             controllerAs: 'vm',

@@ -5,7 +5,7 @@ angular.module('webApp')
         $stateProvider
             .state('app.map', {
                 url: '/map?shopName',
-                templateUrl: 'app/map/map.html',
+                templateUrl: 'map.tpl.html',
                 controller: 'MapController',
                 controllerAs: 'vm'
             });
