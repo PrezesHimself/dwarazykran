@@ -14,7 +14,6 @@
   },
   "author": "",
   "license": "ISC",
-  "version": "1.0.0",
   "engines": {
     "node": "4.1.1"
   },
@@ -44,6 +43,7 @@
     "gulp-watch": "^4.3.5"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "path": "^0.12.7"
   }
 }
