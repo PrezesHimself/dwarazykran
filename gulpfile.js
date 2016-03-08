@@ -67,8 +67,11 @@ gulp.task('js', function() {
 });
 
 // Static server
-gulp.task('build', ['templates','js' ], function() {
-
+gulp.task('build', function() {
+    runSequence(
+        'templates',
+        'js'
+    );
 })
 
 gulp.task('browser-sync', function() {
@@ -88,10 +91,11 @@ gulp.task('test', function (done) {
 
 gulp.task('watch', function () {
     gulp.watch(['./app/*.html'], ['js', browserSync.reload]);
-    gulp.watch(['./app/*.tpl.html'], ['templates', browserSync.reload]);
+    gulp.watch(['./app/**/*.tpl.html'], ['build', browserSync.reload]);
     gulp.watch(['./app/*.css'], [browserSync.reload]);
     gulp.watch(['./app/*.js'], ['js', browserSync.reload ]);
     gulp.watch(['./services/*.js'], ['js', browserSync.reload ]);
+    gulp.watch(['./filters/*.js'], ['js', browserSync.reload ]);
     return gulp.watch(['./components/*.js'], ['js', browserSync.reload ]);
 });
 

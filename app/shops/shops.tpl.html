@@ -1,7 +1,7 @@
 <br>
 <div class="container-fluid" ng-if="!vm.loading">
     <div class="row example-animate-container">
-        <div ng-repeat="shop in vm.shops | filter:vm.searchInput" class="col-sm-6 col-md-3   shopslist__item animate-repeat">
+        <div ng-repeat="shop in vm.shops | levenstain:'name':vm.searchInput" class="col-sm-6 col-md-3   shopslist__item animate-repeat">
                     <div class="thumbnail">
                         <img ng-src="{{shop.logo_url}}" alt="">
                         <div class="caption">
