@@ -2,7 +2,9 @@
     box-sizing: border-box;
     font-family: Arial;
 }
-
+*:focus {
+    outline: none;
+}
 body, html {
     overflow: hidden;
     height: 100vh;
@@ -29,7 +31,6 @@ body, html {
     color: #FFF;
     display: block;
     min-height: 100px;
-    padding: 40px;
     text-align: center;
     z-index: 1;
 }
@@ -38,8 +39,9 @@ body, html {
     width: 80%;
     background: 0;
     border: 0;
-    border-bottom: 1px solid #FFF;
     color: #FFF;
+
+    padding: 40px;
 }
 
 .mainnav {
@@ -112,25 +114,38 @@ body, html {
     transform: translate(0px, 0px);
     width: 100vw;
 }
-/*.slide.ng-enter {*/
-    /*-webkit-transition:0.5s  ease-in-out all;*/
-    /*-moz-transition:0.5s  ease-in-out all;*/
-    /*-o-transition:0.5s  ease-in-out all;*/
-    /*transition:0.5s ease-in-out all;*/
-    /*transform: translate(0,-80px);*/
-    /*opacity:0;*/
+
+/*.sliding-items.ng-move,*/
+/*.sliding-items.ng-enter,*/
+/*.sliding-items.ng-leave {*/
+    /*transition:all linear 0.5s;*/
 /*}*/
 
-/*.slide.ng-leave,*/
-/*.slide.ng-enter.ng-enter-active {*/
-    /*transform: translate(0px,0px);*/
-    /*opacity: 1;*/
+/*.sliding-items.ng-leave.ng-leave-active,*/
+/*.sliding-items.ng-move,*/
+/*.sliding-items.ng-enter {*/
+    /*max-height:100px;*/
+    /*padding: 15px 0px;*/
 /*}*/
 
-/*.slide.ng-leave.ng-leave-active {*/
-    /*transform: translate(0,-50px);*/
-    /*opacity:0;*/
+/*.sliding-items.ng-leave,*/
+/*.sliding-items.ng-move.ng-move-active,*/
+/*.sliding-items.ng-enter.ng-enter-active {*/
+    /*max-height:1px;*/
+    /*padding: 0px;*/
 /*}*/
+
+.sliding-items-container {
+    background: #900;
+
+}
+.sliding-items {
+    /*max-height: 100px;*/
+    /*overflow: hidden;*/
+    margin: 0;
+    /*transition:all linear 10.5s;*/
+}
+
 
 .map {
     background: url(http://www.28thart.com/Art_Works/Particles_Orange.jpg);
