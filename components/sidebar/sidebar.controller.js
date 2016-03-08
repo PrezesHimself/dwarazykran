@@ -11,7 +11,7 @@
         if(this.currentShop) {
 
             ShopsService.getShops().then(function(data) {
-                
+
                 _self.currentShop = UtilsFactory.objectFindByKey(data, 'name', $scope.currentShop.name);
                 //_self.currentShop = data[0];
 

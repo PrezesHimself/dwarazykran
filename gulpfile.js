@@ -13,6 +13,7 @@ var watch = require('gulp-watch');
 var templateCache = require('gulp-angular-templatecache');
 var gzipSize = require('gzip-size');
 var Server = require('karma').Server;
+var runSequence = require('run-sequence');
 
 gulp.task('clean', function() {
     return gulp.src('public', { read: false })
@@ -37,13 +38,24 @@ gulp.task('templates', function () {
         .pipe(gulp.dest('./app/templatesCache'));
 });
 
-gulp.task('dist', ['test', 'clean'], function() {
+gulp.task('dist', ['clean'], function() {
+
+    runSequence(
+        'js:dist',
+        'test'
+    );
+
+
+})
+
+gulp.task('js:dist', function() {
     return gulp.src('app/index.html')
         .pipe(useref())
         .pipe(gulpif('*.js', ngAnnotate()))
         .pipe(gulpif('*.js', uglify()))
-        .pipe(gulp.dest('public'));
-})
+        .pipe(gulp.dest('public'))
+    .pipe(browserSync.reload({ stream:true }));
+});
 
 gulp.task('js', function() {
     return gulp.src('app/index.html')
