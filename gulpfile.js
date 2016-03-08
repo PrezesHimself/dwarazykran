@@ -11,9 +11,11 @@ var gulpif = require('gulp-if');
 var rimraf = require('gulp-rimraf');
 var watch = require('gulp-watch');
 var templateCache = require('gulp-angular-templatecache');
+var gzipSize = require('gzip-size');
+var Server = require('karma').Server;
 
 gulp.task('clean', function() {
-    return gulp.src('.tmp', { read: false })
+    return gulp.src('public', { read: false })
         .pipe(rimraf({ force: true }));
 });
 
@@ -35,19 +37,19 @@ gulp.task('templates', function () {
         .pipe(gulp.dest('./app/templatesCache'));
 });
 
-gulp.task('dist', ['clean'], function() {
+gulp.task('dist', ['test', 'clean'], function() {
     return gulp.src('app/index.html')
         .pipe(useref())
         .pipe(gulpif('*.js', ngAnnotate()))
         .pipe(gulpif('*.js', uglify()))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('public'));
 })
 
 gulp.task('js', function() {
     return gulp.src('app/index.html')
         .pipe(useref())
         .pipe(gulpif('*.js', ngAnnotate()))
-        //.pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.js', uglify()))
         .pipe(gulp.dest('.tmp'))
     .pipe(browserSync.reload({ stream:true }));
 });
@@ -65,11 +67,20 @@ gulp.task('browser-sync', function() {
     });
 });
 
+gulp.task('test', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
+});
+
 gulp.task('watch', function () {
     gulp.watch(['./app/*.html'], ['js', browserSync.reload]);
     gulp.watch(['./app/*.tpl.html'], ['templates', browserSync.reload]);
     gulp.watch(['./app/*.css'], [browserSync.reload]);
-    return gulp.watch(['./app/*.js'], ['js', browserSync.reload ]);
+    gulp.watch(['./app/*.js'], ['js', browserSync.reload ]);
+    gulp.watch(['./services/*.js'], ['js', browserSync.reload ]);
+    return gulp.watch(['./components/*.js'], ['js', browserSync.reload ]);
 });
 
 gulp.task('cors', shell.task([

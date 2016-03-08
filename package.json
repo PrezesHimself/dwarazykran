@@ -35,15 +35,23 @@
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-concat": "^2.6.0",
     "gulp-if": "^2.0.0",
+    "gulp-karma": "0.0.5",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-rimraf": "^0.2.0",
     "gulp-shell": "^0.5.2",
     "gulp-uglify": "^1.5.3",
     "gulp-useref": "^3.0.7",
-    "gulp-watch": "^4.3.5"
+    "gulp-watch": "^4.3.5",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.5"
   },
   "dependencies": {
     "express": "^4.13.4",
+    "gzip-size": "^3.0.0",
     "path": "^0.12.7"
   }
 }
