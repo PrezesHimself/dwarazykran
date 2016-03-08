@@ -20,8 +20,10 @@ gulp.task('clean', function() {
         .pipe(rimraf({ force: true }));
 });
 
-gulp.task('default', [ 'watch', 'build', 'browser-sync', 'cors'], function() {
-
+gulp.task('default', function() {
+    runSequence(
+        'watch', 'build', 'browser-sync', 'cors'
+    );
 })
 
 gulp.task('templates', function () {
@@ -98,7 +100,7 @@ gulp.task('test', function (done) {
 gulp.task('watch', function () {
     gulp.watch(['./app/*.html'], ['js', browserSync.reload]);
     gulp.watch(['./app/**/*.tpl.html'], ['build', browserSync.reload]);
-    gulp.watch(['./app/*.css'], [browserSync.reload]);
+    gulp.watch(['./app/css/*.css'], ['build', browserSync.reload]);
     gulp.watch(['./app/*.js'], ['js', browserSync.reload ]);
     gulp.watch(['./services/*.js'], ['js', browserSync.reload ]);
     gulp.watch(['./filters/*.js'], ['js', browserSync.reload ]);

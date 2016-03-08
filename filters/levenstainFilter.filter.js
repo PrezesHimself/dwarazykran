@@ -43,14 +43,32 @@ angular.module('webApp')
 
                 for (var i = 0; i < input.length; i++) {
                     var obj = input[i];
-                    var l = levenshtein(obj[key].toUpperCase(), searchInput.toUpperCase())
 
-                    var p = Math.abs((l/obj[key].length)*100); // percent of error
+                    var words = obj[key].split(' ');
 
-                    if (p < 45) {
-                        console.log( 'dis you mean ' + obj[key], l);
+                    var min = 100;
 
-                        console.log(p + '%');
+                    for (var j = 0; j < words.length; j++) {
+                        var word = words[j];
+
+                        var l = levenshtein(word.toUpperCase(), searchInput.toUpperCase())
+
+                        var p = Math.abs((l/word.length)*100); // percent of error
+
+                        min = p < min ? p : min;
+
+                        console.log(word, p, min, '%');
+
+                    }
+
+
+
+
+                    if (min < 40) {
+
+                        console.log( 'dis you mean ' + obj[key], min);
+
+
                         res.push(obj);
                     }
 
