@@ -1,1 +1,9 @@
 {{ 'SEARCH_LABEL' | translate }} <input type="text" placeholder="Dziadek Stary Komuch" ng-model="vm.input" ng-change="vm.update()"> ?
+<br>
+<br>
+<br>
+<div ng-repeat="shop in vm.shops | levenstain:'name':vm.input" >
+   <p ng-click="vm.setInput(shop.name)">
+       Did you mean <b>{{shop.name}}</b>?
+   </p>
+</div>

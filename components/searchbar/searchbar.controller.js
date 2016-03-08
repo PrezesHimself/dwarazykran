@@ -2,9 +2,17 @@
 
 (function() {
 
-    function SearchbarController($rootScope, $state) {
+    function SearchbarController($rootScope, $state, ShopsService) {
+        var _self = this;
+
         this.input = '';
-        console.log($state);
+
+        ShopsService.getShops().then(function(data) {
+            _self.shops = data;
+            _self.loading = false;
+        });
+
+
         this.update = function() {
 
             if(this.input) {
@@ -15,9 +23,14 @@
 
             $rootScope.$broadcast('userInput', this.input);
         }
+
+        this.setInput = function(input) {
+            _self.input = input;
+            _self.update();
+        }
     }
 
-    SearchbarController.$inject = ['$rootScope', '$state'];
+    SearchbarController.$inject = ['$rootScope', '$state', 'ShopsService'];
 
     angular.module('webApp')
         .controller('SearchbarController', SearchbarController);

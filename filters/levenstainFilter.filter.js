@@ -47,7 +47,7 @@ angular.module('webApp')
 
                     var p = Math.abs((l/obj[key].length)*100); // percent of error
 
-                    if (p < 33) {
+                    if (p < 45) {
                         console.log( 'dis you mean ' + obj[key], l);
 
                         console.log(p + '%');
@@ -58,6 +58,6 @@ angular.module('webApp')
                 }
             }
 
-            return res.length ? res : input;
+            return res.length ? res : [];
         };
     });

@@ -42,11 +42,17 @@ gulp.task('dist', ['clean'], function() {
 
     runSequence(
         'js:dist',
-        'test'
+        'test',
+        'copy:mocks'
     );
 
 
 })
+
+gulp.task('copy:mocks', function() {
+    return gulp.src('mocks/*')
+        .pipe(gulp.dest('public/mocks'))
+});
 
 gulp.task('js:dist', function() {
     return gulp.src('app/index.html')
