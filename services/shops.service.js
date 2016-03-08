@@ -3,18 +3,17 @@ angular.module('webApp')
 
         var _self = this;
 
-        this.getShops = function() {
-
-            return $http({
-                method: 'GET',
-                url: 'http://localhost:1337/pasazlodz.techcave.pl/api/shop/list/'
-            }).then(function successCallback(response) {
-                console.log('got it!')
-                return response.data;
-            }, function errorCallback(response) {
-                console.error('noting here')
-            });
-        }
+            this.getShops = function() {
+                    return $http({
+                        method: 'GET',
+                        url: 'mocks/shops.json'
+                    }).then(function successCallback(response) {
+                        console.log('got it!')
+                        return response.data;
+                    }, function errorCallback(response) {
+                        // nothig here
+                    });
+            }
 
         this.getShopByName = function(name) {
 
