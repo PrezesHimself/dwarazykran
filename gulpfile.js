@@ -11,9 +11,9 @@ var gulpif = require('gulp-if');
 var rimraf = require('gulp-rimraf');
 var watch = require('gulp-watch');
 var templateCache = require('gulp-angular-templatecache');
-var gzipSize = require('gzip-size');
 var Server = require('karma').Server;
 var runSequence = require('run-sequence');
+var jshint = require('gulp-jshint');
 
 gulp.task('clean', function() {
     return gulp.src('public', { read: false })
@@ -59,17 +59,18 @@ gulp.task('copy:mocks', function() {
 gulp.task('js:dist', function() {
     return gulp.src('app/index.html')
         .pipe(useref())
-        .pipe(gulpif('*.js', ngAnnotate()))
-        .pipe(gulpif('*.js', uglify()))
+        //.pipe(gulpif('*.js', ngAnnotate()))
+        //.pipe(gulpif('*.js', uglify()))
         .pipe(gulp.dest('public'))
     .pipe(browserSync.reload({ stream:true }));
 });
 
-gulp.task('js', function() {
+gulp.task('js', ['js:lint'], function() {
     return gulp.src('app/index.html')
         .pipe(useref())
-        .pipe(gulpif('*.js', ngAnnotate()))
-        .pipe(gulpif('*.js', uglify()))
+        //.pipe(gulpif('*.js', ngAnnotate()))
+        //.pipe(gulpif('*.js', uglify()))
+        //.pipe(gulpif('*.js', jshint()))
         .pipe(gulp.dest('.tmp'))
     .pipe(browserSync.reload({ stream:true }));
 });
@@ -81,6 +82,12 @@ gulp.task('build', function() {
         'js'
     );
 })
+
+gulp.task('js:lint', function() {
+    return gulp.src('app/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default', { verbose: true }));
+});
 
 gulp.task('browser-sync', function() {
     browserSync({
